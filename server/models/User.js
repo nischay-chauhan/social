@@ -24,6 +24,10 @@ const UserSchema = new mongoose.Schema({
         min : 5,
     },
     picture : {
+        type : String,
+        default : ""
+    },
+    friends : {
         type : Array,
         default : []
     },
