@@ -11,6 +11,7 @@ import { fileURLToPath } from "url";
 import connectDB from "./config/db.js";
 import { register } from "./controllers/auth.js";
 import authRoutes from "./routes/auth.js"
+import userRoutes from "./routes/users.js" 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -41,6 +42,7 @@ const app = express();
   app.post("/auth/register", upload.single("picture"), register);
 
   app.use("/auth" , authRoutes);
+  app.use("/users" , userRoutes)
 
   const PORT = process.env.PORT || 6001;
 
